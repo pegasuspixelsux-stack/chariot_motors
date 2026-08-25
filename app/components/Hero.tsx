@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative bg-canvas pt-[159px] pb-[194px] md:pt-[194px] md:pb-[229px]"
+      className="relative bg-canvas pt-[159px] pb-16 md:pb-[229px] md:pt-[194px]"
     >
       <div className="absolute inset-0 overflow-hidden bg-blueprint">
         <Image
@@ -56,7 +56,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-10 translate-y-1/2 px-4 md:px-8">
+      <div className="relative z-10 mt-10 px-4 md:absolute md:inset-x-0 md:bottom-0 md:mt-0 md:translate-y-1/2 md:px-8">
         <div className="mx-auto max-w-5xl">
           <SearchCard />
         </div>
