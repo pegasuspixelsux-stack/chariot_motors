@@ -21,7 +21,7 @@ export const dict = {
     },
     hero: {
       h1: "Every car, fully inspected. No surprises.",
-      p: "Every vehicle inspected, reconditioned, and documented before it hits our lot. That means a 150-point mechanical inspection, a free vehicle history report on every listing, and pricing that's clearly marked from the start — no back-and-forth, no fine print. If something doesn't check out, it doesn't make it to our lot.",
+      p: "Every vehicle inspected, reconditioned, and documented before it hits our lot — with a free history report and pricing that's clear from the start.",
       ctaPrimary: "Explore Inventory",
       ctaSecondary: "Our Inspection Process",
       imgAlt: "A vehicle from the Chariot Motors lot",
@@ -197,7 +197,7 @@ export const dict = {
     },
     hero: {
       h1: "Cada auto, totalmente revisado. Sin sorpresas.",
-      p: "Cada vehículo es inspeccionado, acondicionado y documentado antes de llegar a nuestro lote. Eso significa una revisión mecánica de 150 puntos, un informe de historial gratis en cada publicación, y precios claros desde el principio — sin regateos ni letra chica. Si algo no está en orden, no llega a nuestro lote.",
+      p: "Cada vehículo es inspeccionado, acondicionado y documentado antes de llegar a nuestro lote — con informe de historial gratis y precios claros desde el principio.",
       ctaPrimary: "Ver Inventario",
       ctaSecondary: "Nuestro Proceso de Inspección",
       imgAlt: "Un vehículo del lote de Chariot Motors",
