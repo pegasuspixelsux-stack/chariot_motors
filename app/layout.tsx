@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Chariot Motors",
   description:
-    "Chariot Motors — curated high-performance inventory, precision engineering, and a showroom built for those who command the road.",
+    "Chariot Motors — a straightforward way to buy a used car. Every vehicle inspected, priced transparently, and backed by a full history report.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

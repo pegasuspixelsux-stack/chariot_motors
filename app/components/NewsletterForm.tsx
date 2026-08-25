@@ -14,11 +14,11 @@ export function NewsletterForm() {
           id="newsletter-email"
           type="email"
           placeholder="you@email.com"
-          className="h-11 w-full border border-border-strong bg-surface px-4 text-sm text-ink outline-none placeholder:text-muted-soft focus:border-brand"
+          className="h-11 w-full border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] placeholder:text-muted-soft focus:border-brand focus:bg-white/[0.06]"
         />
         <button
           type="submit"
-          className="h-11 shrink-0 bg-brand px-5 text-sm font-semibold text-white transition-colors hover:bg-brand-active active:scale-[0.98]"
+          className="h-11 shrink-0 bg-brand px-5 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-[var(--ease-apple)] hover:bg-brand-active active:scale-[0.97]"
         >
           Join
         </button>

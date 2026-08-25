@@ -4,8 +4,8 @@ import { NewsletterForm } from "./NewsletterForm";
 
 const NAV_LINKS = [
   { label: "Certified pre-owned", href: "#inventory" },
-  { label: "Vantage performance", href: "#inventory" },
-  { label: "Custom builds", href: "#inventory" },
+  { label: "Used vehicles", href: "#inventory" },
+  { label: "Trade-in a vehicle", href: "#engineering" },
   { label: "Financing", href: "#financing" },
 ];
 
@@ -30,7 +30,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-ink"
+                    className="text-sm text-muted transition-colors duration-150 ease-[var(--ease-apple)] hover:text-ink"
                   >
                     {link.label}
                   </a>
@@ -40,7 +40,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="type-label text-muted">Showroom hours</h3>
+            <h3 className="type-label text-muted">Hours</h3>
             <ul className="mt-6 flex flex-col gap-3">
               {HOURS.map((h) => (
                 <li key={h.day} className="text-sm text-body">
@@ -53,10 +53,11 @@ export function Footer() {
 
           <div>
             <h3 className="type-label text-muted">Contact</h3>
+            {/* TODO: dealer-specific — placeholder address/phone/email, replace with real contact info */}
             <ul className="mt-6 flex flex-col gap-4">
               <li className="flex items-start gap-2.5 text-sm text-body">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-muted" />
-                <span>1200 Vantage Way, Charlotte, NC 28202</span>
+                <span>1200 Main Street, Charlotte, NC 28202</span>
               </li>
               <li className="flex items-center gap-2.5 text-sm text-body">
                 <Phone size={16} className="shrink-0 text-muted" />
@@ -67,10 +68,10 @@ export function Footer() {
               <li className="flex items-center gap-2.5 text-sm text-body">
                 <EnvelopeSimple size={16} className="shrink-0 text-muted" />
                 <a
-                  href="mailto:concierge@chariotmotors.com"
+                  href="mailto:sales@chariotmotors.com"
                   className="hover:text-ink"
                 >
-                  concierge@chariotmotors.com
+                  sales@chariotmotors.com
                 </a>
               </li>
             </ul>
@@ -79,7 +80,7 @@ export function Footer() {
           <div>
             <h3 className="type-label text-muted">Stay informed</h3>
             <p className="mt-6 text-sm text-body">
-              New arrivals and private sale previews, roughly once a month.
+              New arrivals and price drops, roughly once a month.
             </p>
             <NewsletterForm />
           </div>

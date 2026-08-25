@@ -28,6 +28,12 @@
   --color-success: #34d399;
   --color-warning: #fbbf24;
   --color-error: #f87171;
+
+  /* Apple-style momentum curve — replaces default ease-in-out on anything
+     the user presses, hovers, or watches transition. Not a spring (springs
+     need JS), but the closest static approximation of "responsive,
+     decelerating" motion for CSS-only transitions. */
+  --ease-apple: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @theme inline {
@@ -54,6 +60,7 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  font-optical-sizing: auto;
 }
 
 body {
@@ -126,6 +133,30 @@ section[id] {
   font-family: var(--font-mono);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em; /* tight tracking on stat figures */
+}
+
+/*
+  Layered translucent surface — the Apple-HIG "material" for floating panels
+  (search card, form panels, elevated cards) that sit on top of imagery or
+  other content. A dark, low-opacity fill + blur + a bright top hairline
+  (light catching the material's top edge) reads as a real surface, not a
+  flat opaque box. Falls back to a solid fill under prefers-reduced-transparency.
+*/
+.surface-glass {
+  background: color-mix(in srgb, var(--color-surface-elevated) 72%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-top-color: rgb(255 255 255 / 0.14);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .surface-glass {
+    background: var(--color-surface-elevated);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 /*

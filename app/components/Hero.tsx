@@ -16,7 +16,7 @@ export function Hero() {
         <div className="absolute inset-0 overflow-hidden bg-blueprint">
           <Image
             src="/images/hero/bmw_m4.png"
-            alt="A hand-selected performance vehicle from the Chariot Motors showroom floor"
+            alt="A vehicle from the Chariot Motors lot"
             fill
             priority
             sizes="100vw"
@@ -34,24 +34,24 @@ export function Hero() {
             className="max-w-3xl"
           >
             <h1 className="type-display-xl text-ink">
-              Every car, without compromise.
+              Every car, fully inspected. No surprises.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-body md:text-lg">
-              Hand-selected luxury and performance vehicles, inspected and
-              documented before they ever reach our floor.
+              Every vehicle inspected, reconditioned, and documented before
+              it hits our lot.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#inventory"
-                className="inline-flex h-12 items-center bg-brand px-7 text-sm font-semibold text-white transition-colors hover:bg-brand-active active:scale-[0.98]"
+                className="inline-flex h-12 items-center bg-brand px-7 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-[var(--ease-apple)] hover:bg-brand-active active:scale-[0.97]"
               >
                 Explore Inventory
               </a>
               <a
                 href="#engineering"
-                className="inline-flex h-12 items-center border border-border-strong px-7 text-sm font-semibold text-ink transition-colors hover:border-ink active:scale-[0.98]"
+                className="inline-flex h-12 items-center border border-border-strong px-7 text-sm font-semibold text-ink transition-[border-color,transform] duration-150 ease-[var(--ease-apple)] hover:border-ink active:scale-[0.97]"
               >
-                How We Curate
+                Our Inspection Process
               </a>
             </div>
           </motion.div>

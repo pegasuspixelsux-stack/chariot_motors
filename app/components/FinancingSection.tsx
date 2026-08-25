@@ -27,8 +27,8 @@ function monthlyPayment(price: number, down: number, apr: number, months: number
 }
 
 function FinancingPanel() {
-  const [price, setPrice] = useState(68450);
-  const [down, setDown] = useState(8000);
+  const [price, setPrice] = useState(24500);
+  const [down, setDown] = useState(3000);
   const [term, setTerm] = useState(60);
   const [apr, setApr] = useState(6.9);
 
@@ -39,7 +39,7 @@ function FinancingPanel() {
 
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-      <div className="border border-border bg-surface p-6 md:p-8">
+      <div className="surface-glass p-6 md:p-8">
         <p className="type-label text-muted">Estimated monthly payment</p>
         <p className="type-mono-figure mt-2 text-4xl text-ink">
           {currency.format(Math.round(payment))}
@@ -55,7 +55,7 @@ function FinancingPanel() {
               step={500}
               value={price}
               onChange={(e) => setPrice(Number(e.target.value) || 0)}
-              className="h-12 border border-border-strong bg-canvas px-4 text-sm text-ink outline-none focus:border-brand"
+              className="h-12 border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] focus:border-brand focus:bg-white/[0.06]"
             />
           </label>
           <label className="flex flex-col gap-2">
@@ -66,7 +66,7 @@ function FinancingPanel() {
               step={500}
               value={down}
               onChange={(e) => setDown(Number(e.target.value) || 0)}
-              className="h-12 border border-border-strong bg-canvas px-4 text-sm text-ink outline-none focus:border-brand"
+              className="h-12 border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] focus:border-brand focus:bg-white/[0.06]"
             />
           </label>
           <label className="flex flex-col gap-2">
@@ -74,7 +74,7 @@ function FinancingPanel() {
             <select
               value={term}
               onChange={(e) => setTerm(Number(e.target.value))}
-              className="h-12 appearance-none border border-border-strong bg-canvas px-4 text-sm text-ink outline-none focus:border-brand"
+              className="h-12 appearance-none border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] focus:border-brand focus:bg-white/[0.06]"
             >
               <option value={36}>36 months</option>
               <option value={48}>48 months</option>
@@ -91,7 +91,7 @@ function FinancingPanel() {
               step={0.1}
               value={apr}
               onChange={(e) => setApr(Number(e.target.value) || 0)}
-              className="h-12 border border-border-strong bg-canvas px-4 text-sm text-ink outline-none focus:border-brand"
+              className="h-12 border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] focus:border-brand focus:bg-white/[0.06]"
             />
           </label>
         </div>
@@ -105,10 +105,11 @@ function FinancingPanel() {
         <h3 className="type-title text-ink">Built for how you buy.</h3>
         <ul className="mt-5 flex flex-col gap-4">
           {[
-            "Rates from 4.9% APR for qualified buyers",
-            "Terms up to 72 months on new and certified inventory",
+            // TODO: dealer-specific — replace with the real lender rate
+            "Rates from [X]% APR for qualified buyers",
+            "Terms up to 72 months on certified and used inventory",
             "Pre-qualify in minutes without affecting your credit score",
-            "Financing available on new, certified, and used vehicles",
+            "Financing available on certified and used vehicles",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-sm text-body">
               <CheckCircle size={18} className="mt-0.5 shrink-0 text-brand" />
@@ -118,7 +119,7 @@ function FinancingPanel() {
         </ul>
         <a
           href="#contact"
-          className="mt-8 inline-flex h-12 w-fit items-center gap-2 bg-brand px-7 text-sm font-semibold text-white transition-colors hover:bg-brand-active active:scale-[0.98]"
+          className="mt-8 inline-flex h-12 w-fit items-center gap-2 bg-brand px-7 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-[var(--ease-apple)] hover:bg-brand-active active:scale-[0.97]"
         >
           Get pre-qualified
           <ArrowRight size={16} />
@@ -133,7 +134,7 @@ function TradeInPanel() {
 
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-      <div className="border border-border bg-surface p-6 md:p-8">
+      <div className="surface-glass p-6 md:p-8">
         {submitted ? (
           <div className="flex min-h-[280px] flex-col items-center justify-center text-center">
             <CheckCircle size={32} className="text-brand" />
@@ -157,7 +158,7 @@ function TradeInPanel() {
                   type="number"
                   placeholder="2021"
                   required
-                  className="h-12 border border-border-strong bg-canvas px-4 text-sm text-ink outline-none placeholder:text-muted-soft focus:border-brand"
+                  className="h-12 border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] placeholder:text-muted-soft focus:border-brand focus:bg-white/[0.06]"
                 />
               </label>
               <label className="flex flex-col gap-2">
@@ -166,25 +167,25 @@ function TradeInPanel() {
                   type="number"
                   placeholder="42,000"
                   required
-                  className="h-12 border border-border-strong bg-canvas px-4 text-sm text-ink outline-none placeholder:text-muted-soft focus:border-brand"
+                  className="h-12 border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] placeholder:text-muted-soft focus:border-brand focus:bg-white/[0.06]"
                 />
               </label>
               <label className="flex flex-col gap-2">
                 <span className="type-label text-muted">Make</span>
                 <input
                   type="text"
-                  placeholder="Chariot"
+                  placeholder="Toyota"
                   required
-                  className="h-12 border border-border-strong bg-canvas px-4 text-sm text-ink outline-none placeholder:text-muted-soft focus:border-brand"
+                  className="h-12 border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] placeholder:text-muted-soft focus:border-brand focus:bg-white/[0.06]"
                 />
               </label>
               <label className="flex flex-col gap-2">
                 <span className="type-label text-muted">Model</span>
                 <input
                   type="text"
-                  placeholder="Meridian"
+                  placeholder="Camry"
                   required
-                  className="h-12 border border-border-strong bg-canvas px-4 text-sm text-ink outline-none placeholder:text-muted-soft focus:border-brand"
+                  className="h-12 border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] placeholder:text-muted-soft focus:border-brand focus:bg-white/[0.06]"
                 />
               </label>
             </div>
@@ -193,7 +194,7 @@ function TradeInPanel() {
               <select
                 required
                 defaultValue=""
-                className="h-12 appearance-none border border-border-strong bg-canvas px-4 text-sm text-ink outline-none focus:border-brand"
+                className="h-12 appearance-none border border-white/10 bg-white/[0.04] px-4 text-sm text-ink outline-none transition-colors duration-150 ease-[var(--ease-apple)] focus:border-brand focus:bg-white/[0.06]"
               >
                 <option value="" disabled>
                   Select condition
@@ -205,7 +206,7 @@ function TradeInPanel() {
             </label>
             <button
               type="submit"
-              className="mt-1 inline-flex h-12 w-fit items-center gap-2 bg-brand px-7 text-sm font-semibold text-white transition-colors hover:bg-brand-active active:scale-[0.98]"
+              className="mt-1 inline-flex h-12 w-fit items-center gap-2 bg-brand px-7 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-[var(--ease-apple)] hover:bg-brand-active active:scale-[0.97]"
             >
               Get my trade-in estimate
               <ArrowRight size={16} />
@@ -221,7 +222,7 @@ function TradeInPanel() {
             "Free appraisal, ready in about 10 minutes",
             "We will buy your car even if you do not buy ours",
             "Apply your trade-in value directly to a new Chariot",
-            "Offers hold for 7 days at any showroom",
+            "Offers hold for 7 days at any of our locations",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-sm text-body">
               <CheckCircle size={18} className="mt-0.5 shrink-0 text-brand" />
@@ -257,7 +258,7 @@ export function FinancingSection() {
               key={t.id}
               type="button"
               onClick={() => setTab(t.id)}
-              className={`relative pb-4 text-sm font-semibold transition-colors ${
+              className={`relative pb-4 text-sm font-semibold transition-colors duration-150 ease-[var(--ease-apple)] ${
                 tab === t.id ? "text-ink" : "text-muted hover:text-body"
               }`}
             >
