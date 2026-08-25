@@ -4,6 +4,7 @@ import { InventoryGrid } from "./components/InventoryGrid";
 import { BentoSection } from "./components/BentoSection";
 import { BrandFeature } from "./components/BrandFeature";
 import { FinancingSection } from "./components/FinancingSection";
+import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <BentoSection lang="en" />
         <BrandFeature lang="en" />
         <FinancingSection lang="en" />
+        <ContactSection lang="en" />
       </main>
       <Footer lang="en" />
     </>

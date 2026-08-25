@@ -5,6 +5,7 @@ import { InventoryGrid } from "../components/InventoryGrid";
 import { BentoSection } from "../components/BentoSection";
 import { BrandFeature } from "../components/BrandFeature";
 import { FinancingSection } from "../components/FinancingSection";
+import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { SetHtmlLang } from "../components/SetHtmlLang";
 
@@ -25,6 +26,7 @@ export default function HomeEs() {
         <BentoSection lang="es" />
         <BrandFeature lang="es" />
         <FinancingSection lang="es" />
+        <ContactSection lang="es" />
       </main>
       <Footer lang="es" />
     </>
