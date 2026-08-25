@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function InventoryGrid() {
   return (
-    <section id="inventory" className="bg-canvas pt-32 pb-24 md:pb-32">
+    <section id="inventory" className="bg-canvas pt-48 pb-24 md:pt-32 md:pb-32">
       <div className="mx-auto max-w-[1400px] px-4 md:px-8">
         <Reveal className="max-w-xl">
           <h2 className="type-display-md text-ink">Curated inventory</h2>
