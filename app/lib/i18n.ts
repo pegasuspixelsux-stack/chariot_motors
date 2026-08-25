@@ -77,8 +77,8 @@ export const dict = {
           body: "Every vehicle is inspected bumper to bumper before it's listed, so what you see is what you get.",
         },
         {
-          title: "Free Vehicle History Report",
-          body: "Every listing includes a full CARFAX or AutoCheck report, no charge.",
+          title: "Detailed & Cleaned",
+          body: "Every vehicle is professionally cleaned and detailed, inside and out, before it reaches our lot.",
         },
         {
           title: "Transparent Pricing",
@@ -197,7 +197,7 @@ export const dict = {
     },
     hero: {
       h1: "Cada auto, totalmente revisado. Sin sorpresas.",
-      p: "Cada vehículo es inspeccionado, acondicionado y documentado antes de llegar a nuestro lote — con informe de historial gratis y precios claros desde el principio.",
+      p: "Cada vehículo es inspeccionado, acondicionado y documentado antes de llegar a nuestro lote — detallado, limpio y con precios claros desde el principio.",
       ctaPrimary: "Ver Inventario",
       ctaSecondary: "Nuestro Proceso de Inspección",
       imgAlt: "Un vehículo del lote de Chariot Motors",
@@ -253,8 +253,8 @@ export const dict = {
           body: "Cada vehículo se inspecciona de punta a punta antes de publicarse, así lo que ves es lo que comprás.",
         },
         {
-          title: "Informe de Historial Gratis",
-          body: "Cada publicación incluye un informe completo de historial del vehículo, sin costo.",
+          title: "Detallado y Limpio",
+          body: "Cada vehículo se limpia y detalla profesionalmente, por dentro y por fuera, antes de llegar a nuestro lote.",
         },
         {
           title: "Precios Transparentes",

@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
 import {
   ShieldCheck,
-  FileText,
+  Sparkle,
   Tag,
   ArrowsClockwise,
   CreditCard,
@@ -11,7 +11,7 @@ import { t, type Lang } from "../lib/i18n";
 
 const ICONS: [ComponentType<{ size?: number; className?: string }>, 1 | 2, boolean?][] = [
   [ShieldCheck, 2, true],
-  [FileText, 1],
+  [Sparkle, 1],
   [Tag, 1],
   [ArrowsClockwise, 1],
   [CreditCard, 1],
@@ -36,7 +36,7 @@ function BentoCell({
         span === 2 ? "md:col-span-2" : ""
       } ${accent ? "bg-blueprint" : "bg-surface-elevated"}`}
     >
-      <Icon size={22} className="relative text-brand" />
+      <Icon size={44} className="relative text-brand" />
       <h3 className="relative mt-4 type-title text-ink">{title}</h3>
       <p className="relative mt-2 max-w-md text-sm leading-relaxed text-muted">
         {body}
