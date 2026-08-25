@@ -11,7 +11,7 @@ export function Hero() {
     <>
       <section
         id="top"
-        className="relative bg-canvas pt-[calc(159px+10vh)] pb-[calc(12rem+20vh)] md:pb-[229px] md:pt-[194px]"
+        className="relative bg-canvas pt-[calc(159px+5vh)] pb-[calc(12rem+10vh)] md:pb-[229px] md:pt-[194px]"
       >
         <div className="absolute inset-0 overflow-hidden bg-blueprint">
           <Image
