@@ -4,19 +4,14 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 import { Logo } from "./Logo";
+import { LangSwitch } from "./LangSwitch";
+import { t, type Lang } from "../lib/i18n";
 
-const LINKS = [
-  { label: "Models", href: "#inventory" },
-  { label: "Financing", href: "#financing" },
-  { label: "Why Buy", href: "#engineering" },
-  { label: "Heritage", href: "#heritage" },
-  { label: "Contact", href: "#contact" },
-];
-
-export function Nav() {
+export function Nav({ lang = "en" }: { lang?: Lang }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduce = useReducedMotion();
+  const c = t(lang).nav;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -42,7 +37,7 @@ export function Nav() {
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {LINKS.map((link) => (
+          {c.links.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -53,24 +48,28 @@ export function Nav() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-5 lg:flex">
+          <LangSwitch lang={lang} />
           <a
             href="#configure"
             className="inline-flex h-11 items-center bg-brand px-6 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-[var(--ease-apple)] hover:bg-brand-active active:scale-[0.97]"
           >
-            Configure
+            {c.configure}
           </a>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          className="flex h-10 w-10 items-center justify-center text-ink transition-transform duration-100 ease-[var(--ease-apple)] active:scale-90 lg:hidden"
-        >
-          {open ? <X size={22} /> : <List size={22} />}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <LangSwitch lang={lang} />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? c.closeMenu : c.openMenu}
+            aria-expanded={open}
+            className="flex h-10 w-10 items-center justify-center text-ink transition-transform duration-100 ease-[var(--ease-apple)] active:scale-90"
+          >
+            {open ? <X size={22} /> : <List size={22} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence initial={false}>
@@ -84,7 +83,7 @@ export function Nav() {
             className="overflow-hidden border-t border-border bg-[#0a0a0a]/95 backdrop-blur-md lg:hidden"
           >
             <nav className="flex flex-col gap-5 px-4 py-6">
-              {LINKS.map((link) => (
+              {c.links.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
@@ -99,7 +98,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex h-12 items-center justify-center bg-brand px-6 text-sm font-semibold text-white transition-transform duration-150 ease-[var(--ease-apple)] active:scale-[0.97]"
               >
-                Configure
+                {c.configure}
               </a>
             </nav>
           </motion.div>

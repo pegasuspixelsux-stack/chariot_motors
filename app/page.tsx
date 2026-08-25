@@ -9,15 +9,15 @@ import { Footer } from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <Nav />
+      <Nav lang="en" />
       <main>
-        <Hero />
-        <InventoryGrid />
-        <BentoSection />
-        <BrandFeature />
-        <FinancingSection />
+        <Hero lang="en" />
+        <InventoryGrid lang="en" />
+        <BentoSection lang="en" />
+        <BrandFeature lang="en" />
+        <FinancingSection lang="en" />
       </main>
-      <Footer />
+      <Footer lang="en" />
     </>
   );
 }

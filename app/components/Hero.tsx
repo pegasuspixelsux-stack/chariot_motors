@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { SearchCard } from "./SearchCard";
+import { t, type Lang } from "../lib/i18n";
 
-export function Hero() {
+export function Hero({ lang = "en" }: { lang?: Lang }) {
   const reduce = useReducedMotion();
+  const c = t(lang).hero;
 
   return (
     <>
@@ -16,7 +18,7 @@ export function Hero() {
         <div className="absolute inset-0 overflow-hidden bg-blueprint">
           <Image
             src="/images/hero/bmw_m4.png"
-            alt="A vehicle from the Chariot Motors lot"
+            alt={c.imgAlt}
             fill
             priority
             sizes="100vw"
@@ -33,25 +35,22 @@ export function Hero() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl"
           >
-            <h1 className="type-display-xl text-ink">
-              Every car, fully inspected. No surprises.
-            </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-body md:text-lg">
-              Every vehicle inspected, reconditioned, and documented before
-              it hits our lot.
+            <h1 className="type-display-xl text-ink">{c.h1}</h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-body md:text-lg">
+              {c.p}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#inventory"
                 className="inline-flex h-12 items-center bg-brand px-7 text-sm font-semibold text-white transition-[background-color,transform] duration-150 ease-[var(--ease-apple)] hover:bg-brand-active active:scale-[0.97]"
               >
-                Explore Inventory
+                {c.ctaPrimary}
               </a>
               <a
                 href="#engineering"
                 className="inline-flex h-12 items-center border border-border-strong px-7 text-sm font-semibold text-ink transition-[border-color,transform] duration-150 ease-[var(--ease-apple)] hover:border-ink active:scale-[0.97]"
               >
-                Our Inspection Process
+                {c.ctaSecondary}
               </a>
             </div>
           </motion.div>
@@ -60,7 +59,7 @@ export function Hero() {
         {/* Desktop: card overlaps the bottom edge of the hero image */}
         <div className="hidden md:absolute md:inset-x-0 md:bottom-0 md:z-10 md:block md:translate-y-1/2 md:px-8">
           <div className="mx-auto max-w-5xl">
-            <SearchCard />
+            <SearchCard lang={lang} />
           </div>
         </div>
       </section>
@@ -70,7 +69,7 @@ export function Hero() {
           exactly 50/50 regardless of the card's actual rendered height. */}
       <div className="relative md:hidden">
         <div className="absolute inset-x-0 top-0 z-10 -translate-y-1/2 px-4">
-          <SearchCard />
+          <SearchCard lang={lang} />
         </div>
       </div>
     </>
